@@ -1,0 +1,144 @@
+html {
+    background-color: #ECE9E9;
+}
+
+th, td {
+    text-align: center;
+    position: relative;
+}
+
+th > *, td > * {
+    margin: 15px 20px;
+}
+
+th > textarea, td > textarea {
+    margin: 0;
+}
+
+#content-and-category-row {
+    padding-top: 15px;
+    PADDING-BOTTOM: 15px;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.edit-button, .save-changes, .edit-category-button, .edit-category-button, .save-category-button  {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    margin: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100%;
+
+    position: relative;
+    left: 0;
+    top: 0;
+
+    text-align: center;
+
+    resize: none;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+#pid-column-header-cell {
+    /*white-space: ;*/
+}
+
+#edit-column-header-cell {
+    /*white-space: nowrap;*/
+}
+
+#newQuestionContent {
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+    font-size: 4em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#addNewQuestionLabel {
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#content-table-wrapper {
+    padding-left: 0;
+}
+
+#addNewQuestionForm {
+    margin-bottom: 15px;
+}
+
+#new-question-submit-button, #new-category-submit-button {
+    width: 100%;
+}
+
+.category-name {
+    word-wrap: break-word;
+}
+
+#newCategory {
+    text-align: center;
+}
+
+#category-table-wrapper {
+    padding-right: 0;
+    position: fixed;
+}
+
+#category-table {
+    width: 100%;
+}
+
+#category-table-tbody {
+    display: block;
+    max-height: calc(100vh - 400px);
+    overflow-y: overlay;
+}
+
+#category-table-thead {
+    width: 100%;
+}
+
+#category-table-tbody tr  {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.save-content-changes-form {
+    margin: 0;
+}
+
+.category-header-row th {
+    display: inline-block;
+}
+
+.category-id-column {
+    width: 15%;
+}
+
+.category-name-column {
+    width: 60%;
+}
+
+.category-edit-column {
+    width: 25%;
+}
