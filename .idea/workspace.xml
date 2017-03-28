@@ -22,153 +22,30 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.61946905">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/index.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
-                  <caret line="159" column="77" lean-forward="false" selection-start-line="159" selection-start-column="77" selection-end-line="159" selection-end-column="77" />
-                  <folding>
-                    <marker date="1490651865397" expanded="true" signature="448:506" ph="SELECT `pid`... problem" />
-                    <marker date="1490651865397" expanded="true" signature="741:777" ph="SELECT `cid`... category" />
-                    <marker date="1490651865397" expanded="true" signature="1069:1136" ph="SELECT `pcmi... prob_cat_mapping" />
-                    <marker date="1490651865397" expanded="true" signature="1750:1830" ph="SELECT `prob... prob_cat_mapping" />
-                    <marker date="1490651865397" expanded="true" signature="1750:1831" ph="SELECT `prob... prob_cat_mapping" />
-                    <marker date="1490651865397" expanded="true" signature="1750:1850" ph="SELECT `prob... prob_cat_mapping" />
-                    <marker date="1490651865397" expanded="true" signature="2113:2171" ph="SELECT `pid`... problem" />
-                    <marker date="1490651865397" expanded="true" signature="2113:2223" ph="SELECT `pid`... problem" />
-                    <marker date="1490651865397" expanded="true" signature="8444:8540" ph="INSERT INTO `prob_cat_mapping`... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2414">
-                  <caret line="142" column="12" lean-forward="false" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="updateCategory.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/updateCategory.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-                  <folding>
-                    <marker date="1490297788797" expanded="true" signature="649:738" ph="UPDATE `cate... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="submitCategory.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/submitCategory.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
-                  <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-                  <folding>
-                    <marker date="1489709661011" expanded="true" signature="504:562" ph="INSERT INTO category" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="company.sql" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/company.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
-                  <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="submitQuestion.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/submitQuestion.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-                  <folding>
-                    <marker date="1489709456121" expanded="true" signature="516:579" ph="INSERT INTO problem" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="updateQuestion.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/updateQuestion.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1564">
-                  <caret line="92" column="2" lean-forward="false" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
-                  <folding>
-                    <marker date="1490321259429" expanded="true" signature="780:812" ph="UPDATE probl... " />
-                    <marker date="1490321259429" expanded="true" signature="780:853" ph="UPDATE probl... " />
-                    <marker date="1490321259429" expanded="true" signature="780:874" ph="UPDATE `prob... " />
-                    <marker date="1490321259429" expanded="true" signature="981:1017" ph="SELECT `cid`... category" />
-                    <marker date="1490321259429" expanded="true" signature="1617:1675" ph="UPDATE `prob... " />
-                    <marker date="1490321259429" expanded="true" signature="1617:1719" ph="UPDATE `prob... " />
-                    <marker date="1490321259429" expanded="true" signature="1735:1840" ph="INSERT INTO `prob_cat_mapping`... " />
-                    <marker date="1490321259429" expanded="true" signature="1975:2042" ph="SELECT * FRO... prob_cat_mapp" />
-                    <marker date="1490321259429" expanded="true" signature="2598:2703" ph="INSERT INTO `prob_cat_mapping`... " />
-                    <marker date="1490321259429" expanded="true" signature="2598:2860" ph="INSERT INTO `prob_cat_mapping`... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="console.sql" pinned="false" current-in-tab="true">
-            <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cf06537e-9218-4565-b12d-b69df8aea9fd/console.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="mathprobdb.sql" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/db/mathprobdb.sql">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="php.ini" pinned="false" current-in-tab="false">
-            <entry file="file://C:/php-5.4/php.ini">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="14790">
-                  <caret line="870" column="22" lean-forward="false" selection-start-line="870" selection-start-column="22" selection-end-line="870" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <folding>
+                <marker date="1490737455040" expanded="true" signature="486:544" ph="SELECT `pid`... problem" />
+                <marker date="1490737455040" expanded="true" signature="829:865" ph="SELECT `cid`... category" />
+                <marker date="1490737455040" expanded="true" signature="1230:1297" ph="SELECT `pcmi... prob_cat_mapping" />
+                <marker date="1490737455040" expanded="true" signature="2240:2320" ph="SELECT `prob... prob_cat_mapping" />
+                <marker date="1490737455040" expanded="true" signature="2240:2321" ph="SELECT `prob... prob_cat_mapping" />
+                <marker date="1490737455040" expanded="true" signature="2240:2340" ph="SELECT `prob... prob_cat_mapping" />
+                <marker date="1490737455040" expanded="true" signature="2817:2870" ph="SELECT `pid`... problem" />
+                <marker date="1490737455040" expanded="true" signature="2817:2871" ph="SELECT `pid`... problem" />
+                <marker date="1490737455040" expanded="true" signature="2817:2932" ph="SELECT `pid`... problem" />
+                <marker date="1490737455040" expanded="true" signature="2817:3115" ph="SELECT `pid`... problem" />
+                <marker date="1490737455040" expanded="true" signature="10477:10573" ph="INSERT INTO `prob_cat_mapping`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -181,36 +58,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Update</find>
-      <find>Edit</find>
-      <find>edit-button</find>
-      <find>edit-button-w</find>
-      <find>nowar</find>
-      <find>white</find>
-      <find>category-na</find>
-      <find>probl</find>
-      <find>tr</find>
-      <find>category-name-ce</find>
-      <find>/th</find>
-      <find>category-table</find>
-      <find>&quot;</find>
-      <find>1attr</find>
-      <find>2a</find>
-      <find>1a</find>
-      <find>'attr3'</find>
-      <find>test2</find>
-      <find>project</find>
-      <find>m</find>
-      <find>WhERE</find>
-      <find>333445555</find>
-      <find>'</find>
-      <find>?</find>
       <find>Add a New C</find>
       <find>category-t</find>
       <find>category-edit</find>
       <find>-cell</find>
       <find>$</find>
       <find>$i</find>
+      <find>15</find>
+      <find>10</find>
+      <find>splice</find>
+      <find>btn-default</find>
+      <find>btn</find>
+      <find>selectedCategory</find>
+      <find>sav</find>
+      <find>edit-conte</find>
+      <find>editQuestion</find>
+      <find>question-content-</find>
+      <find>none</find>
+      <find>hide</find>
+      <find>save-changes-category</find>
+      <find>save-changes-</find>
+      <find>content-and</find>
+      <find>newQ</find>
+      <find>table</find>
+      <find>updateQ</find>
+      <find>updatedCategory</find>
+      <find>view</find>
+      <find>edit-category=cont</find>
+      <find>question-content</find>
+      <find>edit-content</find>
+      <find>save-changes</find>
     </findStrings>
     <replaceStrings>
       <replace>=C:\php\ext\</replace>
@@ -234,6 +111,7 @@
       <replace>`</replace>
       <replace>$.&quot;\n&quot;</replace>
       <replace>$j</replace>
+      <replace>btn-primary</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -246,7 +124,6 @@
         <option value="C:/php-5/php.ini" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/db/mathprobdb.sql" />
         <option value="$PROJECT_DIR$/welcome.php" />
         <option value="$PROJECT_DIR$/asdf.html" />
         <option value="C:/php-5.4/php.ini" />
@@ -254,14 +131,19 @@
         <option value="$PROJECT_DIR$/db/index.js" />
         <option value="$PROJECT_DIR$/dontNaviagateToMe.php" />
         <option value="$PROJECT_DIR$/MyGateway Examples/UniversityInputData/uniinput.php" />
-        <option value="$PROJECT_DIR$/submitCategory.php" />
-        <option value="$PROJECT_DIR$/submitQuestion.php" />
-        <option value="$PROJECT_DIR$/updateCategory.php" />
-        <option value="$PROJECT_DIR$/index.css" />
-        <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/db/mathprobdb.sql" />
+        <option value="$PROJECT_DIR$/db.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/cf06537e-9218-4565-b12d-b69df8aea9fd/console.sql" />
-        <option value="$PROJECT_DIR$/updateQuestion.php" />
+        <option value="$PROJECT_DIR$/SQL Console Commands (development process)" />
+        <option value="$PROJECT_DIR$/index.css" />
+        <option value="$PROJECT_DIR$/submitQuestion.php" />
+        <option value="$PROJECT_DIR$/submitCategory.php" />
+        <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/insertNewCategory.php" />
+        <option value="$PROJECT_DIR$/insertNewQuestion.php" />
+        <option value="$PROJECT_DIR$/updateCategory.php" />
+        <option value="$PROJECT_DIR$/updateQuestion.php" />
       </list>
     </option>
   </component>
@@ -307,31 +189,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.library.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Project 1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project 1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project 1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project 1" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,35 +305,36 @@
       <workItem from="1489677671765" duration="35260000" />
       <workItem from="1490147462878" duration="22103000" />
       <workItem from="1490388256992" duration="4375000" />
-      <workItem from="1490648379882" duration="671000" />
+      <workItem from="1490648379882" duration="10888000" />
+      <workItem from="1490729590751" duration="7901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114296000" />
+    <option name="totallyTimeSpent" value="132414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0600159" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298722" sideWeight="0.50158983" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04252782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298722" sideWeight="0.50158983" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13084853" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23235527" sideWeight="0.49841017" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.060413353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04252782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23235527" sideWeight="0.49841017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -490,9 +349,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.php" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cf06537e-9218-4565-b12d-b69df8aea9fd/console.sql" />
-    <entry file="file://$PROJECT_DIR$/math.php" />
     <entry file="file://$PROJECT_DIR$/test1.html" />
     <entry file="file://$PROJECT_DIR$/test.php" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cf06537e-9218-4565-b12d-b69df8aea9fd/console.sql" />
@@ -619,19 +475,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/company.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/php-5.4/php.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14790">
           <caret line="870" column="22" lean-forward="false" selection-start-line="870" selection-start-column="22" selection-end-line="870" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,101 +490,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
+    <entry file="file://$PROJECT_DIR$/db/mathprobdb.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="142" column="12" lean-forward="false" selection-start-line="142" selection-start-column="12" selection-end-line="142" selection-end-column="12" />
+        <state relative-caret-position="136">
+          <caret line="8" column="42" lean-forward="false" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/submitQuestion.php">
+    <entry file="file://$PROJECT_DIR$/company.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1489709456121" expanded="true" signature="516:579" ph="INSERT INTO problem" />
-          </folding>
+        <state relative-caret-position="425">
+          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/submitCategory.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <marker date="1489709661011" expanded="true" signature="504:562" ph="INSERT INTO category" />
-          </folding>
+        <state relative-caret-position="411">
+          <caret line="544" column="22" lean-forward="false" selection-start-line="544" selection-start-column="22" selection-end-line="544" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL Console Commands (development process)">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="15" lean-forward="false" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="306">
+          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/updateQuestion.php">
+    <entry file="file://$PROJECT_DIR$/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="2" lean-forward="false" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
-          <folding>
-            <marker date="1490321259429" expanded="true" signature="780:812" ph="UPDATE probl... " />
-            <marker date="1490321259429" expanded="true" signature="780:853" ph="UPDATE probl... " />
-            <marker date="1490321259429" expanded="true" signature="780:874" ph="UPDATE `prob... " />
-            <marker date="1490321259429" expanded="true" signature="981:1017" ph="SELECT `cid`... category" />
-            <marker date="1490321259429" expanded="true" signature="1617:1675" ph="UPDATE `prob... " />
-            <marker date="1490321259429" expanded="true" signature="1617:1719" ph="UPDATE `prob... " />
-            <marker date="1490321259429" expanded="true" signature="1735:1840" ph="INSERT INTO `prob_cat_mapping`... " />
-            <marker date="1490321259429" expanded="true" signature="1975:2042" ph="SELECT * FRO... prob_cat_mapp" />
-            <marker date="1490321259429" expanded="true" signature="2598:2703" ph="INSERT INTO `prob_cat_mapping`... " />
-            <marker date="1490321259429" expanded="true" signature="2598:2860" ph="INSERT INTO `prob_cat_mapping`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/mathprobdb.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cf06537e-9218-4565-b12d-b69df8aea9fd/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        <state relative-caret-position="357">
+          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/insertNewCategory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding>
+            <marker date="1490737454995" expanded="true" signature="595:653" ph="INSERT INTO category" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/updateCategory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="51">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
           <folding>
-            <marker date="1490297788797" expanded="true" signature="649:738" ph="UPDATE `cate... " />
+            <marker date="1490737455083" expanded="true" signature="864:953" ph="UPDATE `cate... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/insertNewQuestion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding>
+            <marker date="1490737455073" expanded="true" signature="610:673" ph="INSERT INTO problem" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/updateQuestion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+          <folding>
+            <marker date="1490737455022" expanded="true" signature="1131:1163" ph="UPDATE probl... " />
+            <marker date="1490737455022" expanded="true" signature="1131:1204" ph="UPDATE probl... " />
+            <marker date="1490737455022" expanded="true" signature="1131:1225" ph="UPDATE `prob... " />
+            <marker date="1490737455022" expanded="true" signature="1331:1367" ph="SELECT `cid`... category" />
+            <marker date="1490737455022" expanded="true" signature="1845:1912" ph="SELECT * FRO... prob_cat_mapp" />
+            <marker date="1490737455022" expanded="true" signature="2482:2587" ph="INSERT INTO `prob_cat_mapping`... " />
+            <marker date="1490737455022" expanded="true" signature="2482:2590" ph="INSERT INTO `prob_cat_mapping`... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="159" column="77" lean-forward="false" selection-start-line="159" selection-start-column="77" selection-end-line="159" selection-end-column="77" />
+        <state relative-caret-position="272">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
           <folding>
-            <marker date="1490651865397" expanded="true" signature="448:506" ph="SELECT `pid`... problem" />
-            <marker date="1490651865397" expanded="true" signature="741:777" ph="SELECT `cid`... category" />
-            <marker date="1490651865397" expanded="true" signature="1069:1136" ph="SELECT `pcmi... prob_cat_mapping" />
-            <marker date="1490651865397" expanded="true" signature="1750:1830" ph="SELECT `prob... prob_cat_mapping" />
-            <marker date="1490651865397" expanded="true" signature="1750:1831" ph="SELECT `prob... prob_cat_mapping" />
-            <marker date="1490651865397" expanded="true" signature="1750:1850" ph="SELECT `prob... prob_cat_mapping" />
-            <marker date="1490651865397" expanded="true" signature="2113:2171" ph="SELECT `pid`... problem" />
-            <marker date="1490651865397" expanded="true" signature="2113:2223" ph="SELECT `pid`... problem" />
-            <marker date="1490651865397" expanded="true" signature="8444:8540" ph="INSERT INTO `prob_cat_mapping`... " />
+            <marker date="1490737455040" expanded="true" signature="486:544" ph="SELECT `pid`... problem" />
+            <marker date="1490737455040" expanded="true" signature="829:865" ph="SELECT `cid`... category" />
+            <marker date="1490737455040" expanded="true" signature="1230:1297" ph="SELECT `pcmi... prob_cat_mapping" />
+            <marker date="1490737455040" expanded="true" signature="2240:2320" ph="SELECT `prob... prob_cat_mapping" />
+            <marker date="1490737455040" expanded="true" signature="2240:2321" ph="SELECT `prob... prob_cat_mapping" />
+            <marker date="1490737455040" expanded="true" signature="2240:2340" ph="SELECT `prob... prob_cat_mapping" />
+            <marker date="1490737455040" expanded="true" signature="2817:2870" ph="SELECT `pid`... problem" />
+            <marker date="1490737455040" expanded="true" signature="2817:2871" ph="SELECT `pid`... problem" />
+            <marker date="1490737455040" expanded="true" signature="2817:2932" ph="SELECT `pid`... problem" />
+            <marker date="1490737455040" expanded="true" signature="2817:3115" ph="SELECT `pid`... problem" />
+            <marker date="1490737455040" expanded="true" signature="10477:10573" ph="INSERT INTO `prob_cat_mapping`... " />
           </folding>
         </state>
       </provider>

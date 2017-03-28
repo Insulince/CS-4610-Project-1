@@ -1,0 +1,35 @@
+USE mathprobdb;
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `cid`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100)     NOT NULL,
+  PRIMARY KEY (`cid`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = latin1;
+
+INSERT INTO `category` (`cid`, `name`) VALUES (0, '{NO CATEGORY}');
+
+CREATE TABLE IF NOT EXISTS `prob_cat_mapping` (
+  `pcmid`       INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `problem_id`  INT(10) UNSIGNED NOT NULL,
+  `category_id` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`pcmid`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = latin1;
+
+DROP DATABASE mathprobdb;
+
+DROP TABLE prob_cat_mapping;
+
+SELECT *
+FROM `problem`;
+
+SELECT *
+FROM `category`;
+
+SELECT *
+FROM `prob_cat_mapping`;
+
+SHOW DATABASES;

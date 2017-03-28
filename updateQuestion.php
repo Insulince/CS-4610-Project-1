@@ -1,13 +1,13 @@
 <?php
 $databaseHost = "localhost";
-$databaseUsername = "justin";
-$databasePassword = "cC8XBEha48hjn="; //TODO: REMOVE THIS
+$databaseUsername = "root";
+$databasePassword = "";
 $databaseName = "mathprobdb";
 
 $connection = mysql_connect($databaseHost, $databaseUsername, $databasePassword);
 
 if (!$connection) {
-    die('Error: Could not connect for reason "' . mysql_error() . '"');
+    die('Error: Could not connect for reason "' . mysql_error() . '"!');
 }
 
 mysql_select_db($databaseName, $connection);
@@ -15,20 +15,25 @@ mysql_select_db($databaseName, $connection);
 $updatedQuestionContent = null;
 if (isset($_GET['updatedQuestionContent'])) {
     $updatedQuestionContent = $_GET['updatedQuestionContent'];
+} else {
+    die('Error: The "updatedQuestionContent" value was not sent, so I could not update the question in the database!');
 }
 
 $updatedQuestionPid = null;
-if (isset($_GET['updatedQuestionContent'])) {
+if (isset($_GET['updatedQuestionPid'])) {
     $updatedQuestionPid = $_GET['updatedQuestionPid'];
+} else {
+    die('Error: The "updatedQuestionPid" value was not sent, so I could not update the question in the database!');
 }
 
-$updatedCategory = null;
-if (isset($_GET['updatedCategory'])) {
-    $updatedCategory = $_GET['updatedCategory'];
+$updatedCategoryName = null;
+if (isset($_GET['updatedCategoryName'])) {
+    $updatedCategoryName = $_GET['updatedCategoryName'];
+} else {
+    die('Error: The "updatedCategoryName" was not sent, so I could not update the question in the database!');
 }
 
 $query = "UPDATE `problem` SET `content` = '$updatedQuestionContent' WHERE `pid` = '$updatedQuestionPid';";
-
 $result = mysql_query($query);
 
 $categoryCidArray = array();
@@ -45,18 +50,10 @@ while ($row = mysql_fetch_assoc($result)) {
 
 $categoryId = -1;
 for ($i = 0; $i < count($categoryNameArray); $i++) {
-    if ($updatedCategory == $categoryNameArray[$i]) {
+    if ($updatedCategoryName == $categoryNameArray[$i]) {
         $categoryId = $categoryCidArray[$i];
     }
 }
-
-print "Updated Category: " . $updatedCategory . "\n";
-print "Current question PID: " . $updatedQuestionPid . "\n";
-print "Current question Content: " . $updatedQuestionContent . "\n";
-print "ID of category to update to: " . $categoryId . "\n";
-
-//$query = "UPDATE `prob_cat_mapping` SET `category_id` = '$categoryId' WHERE `problem_id` = '$updatedQuestionPid';";
-//$query = "INSERT INTO `prob_cat_mapping` (`problem_id`, `category_id`) VALUES('$updatedQuestionPid', '$categoryId')";
 
 $probcatmappingPcmidArray = array();
 $probcatmappingProblemIdArray = array();
@@ -72,17 +69,14 @@ while ($row = mysql_fetch_assoc($result)) {
     $probcatmappingCategoryIdArray[] = $row['category_id'];
 }
 
-$dontSet = false;
-
+$notAlreadyInProbCatMapping = true;
 for ($i = 0; $i < count($probcatmappingPcmidArray); $i++) {
     if ($probcatmappingProblemIdArray[$i] == $updatedQuestionPid && $probcatmappingCategoryIdArray[$i] == $categoryId) {
-        $dontSet = true;
-        print "dontSet = true";
+        $notAlreadyInProbCatMapping = false;
     }
 }
-
-if ($dontSet == false) {
-    $query = "INSERT INTO `prob_cat_mapping` (`problem_id`, `category_id`) VALUES('$updatedQuestionPid', '$categoryId');";//" IF NOT EXISTS(SELECT `problem_id`, `category_id` FROM `prob_cat_mapping` WHERE `problem_id` = '$updatedQuestionPid' AND `category_id` = '$categoryId');";
+if ($notAlreadyInProbCatMapping) {
+    $query = "INSERT INTO `prob_cat_mapping` (`problem_id`, `category_id`) VALUES('$updatedQuestionPid', '$categoryId');";
 
     $result = mysql_query($query);
 

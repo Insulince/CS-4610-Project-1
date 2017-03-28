@@ -123,10 +123,8 @@ INSERT INTO `problem` (`pid`, `content`) VALUES
   (100, '<img src="selectedimages/semfigure45.PNG" width="280" alt="semfigure45" />\r\n<p></p><p></p>\r\nIn the figure above,  \\(JL = KL = LM\\)  and  \\({\\rm m}\\angle JLK = 70\\). This information is sufficient to determine the value of which of the following?'),
   (101, 'Five people shared a prize of  \\(\\$100\\). Each one received a whole number of dollars, and no two people received the same amount. If the largest share was  \\(\\$30\\)  and the smallest share was  \\(\\$15\\), what is the most money that the person with the third largest share could have received?');
 
-
 ALTER TABLE `problem`
   ADD PRIMARY KEY (`pid`);
-
 
 ALTER TABLE `problem`
   MODIFY `pid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -134,3 +132,22 @@ ALTER TABLE `problem`
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS = @OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION = @OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `cid`  INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100)     NOT NULL,
+  PRIMARY KEY (`cid`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = latin1;
+
+INSERT INTO `category` (`cid`, `name`) VALUES (0, '{NO CATEGORY}');
+
+CREATE TABLE IF NOT EXISTS `prob_cat_mapping` (
+  `pcmid`       INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `problem_id`  INT(10) UNSIGNED NOT NULL,
+  `category_id` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`pcmid`)
+)
+  ENGINE = InnoDB
+  DEFAULT CHARSET = latin1;

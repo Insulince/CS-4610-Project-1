@@ -1,17 +1,18 @@
 <?php
 $databaseHost = "localhost";
-$databaseUsername = "justin";
-$databasePassword = "cC8XBEha48hjn="; //TODO: REMOVE THIS
+$databaseUsername = "root";
+$databasePassword = "";
 $databaseName = "mathprobdb";
 
 $connection = mysql_connect($databaseHost, $databaseUsername, $databasePassword);
 
 if (!$connection) {
-    die('Error: Could not connect for reason "' . mysql_error() . '"');
+    die('Error: Could not connect for reason "' . mysql_error() . '"!');
 }
 
 mysql_select_db($databaseName, $connection);
 
+//Get all the problems in the problem table, order by most recent first.
 $problemPidArray = array();
 $problemContentArray = array();
 $query = "SELECT `pid`, `content` FROM `problem` ORDER BY `pid` DESC;";
@@ -21,6 +22,7 @@ while ($row = mysql_fetch_assoc($result)) {
     $problemContentArray[] = $row['content'];
 }
 
+//Get all the categories from the category table.
 $categoryCidArray = array();
 $categoryNameArray = array();
 $query = "SELECT `cid`, `name` FROM `category`;";
@@ -30,6 +32,7 @@ while ($row = mysql_fetch_assoc($result)) {
     $categoryNameArray[] = $row['name'];
 }
 
+//Get all the problem-category-mappings from the prob_cat_mapping table.
 $probcatmappingPcmidArray = array();
 $probcatmappingProblemIdArray = array();
 $probcatmappingCategoryIdArray = array();
@@ -41,38 +44,41 @@ while ($row = mysql_fetch_assoc($result)) {
     $probcatmappingCategoryIdArray[] = $row["category_id"];
 }
 
+//Display a different set of problems is the "selectedCategory" GET parameter was set.
+$selectedCategory = "{NO CATEGORY}";
 if (isset($_GET['selectedCategory'])) {
-
     $selectedCategoryId = "-1";
+    $selectedCategory = $_GET['selectedCategory'];
 
-    for ($i = 0; $i < count($categoryNameArray); $i++) {
-        if ($categoryNameArray[$i] == $_GET['selectedCategory']) {
-            $selectedCategoryId = $categoryCidArray[$i];
+    for ($i = 0; $i < count($categoryCidArray); $i++) { //For every category...
+        if ($categoryNameArray[$i] == $_GET['selectedCategory']) { //If the current category matches the requested category...
+            $selectedCategoryId = $categoryCidArray[$i]; //Record that.
         }
     }
 
-    if ($selectedCategoryId != -1) {
+    if ($selectedCategoryId != -1) { //If we found the category that the user searched for...
         $tmpProblemIdArray = array();
-        $query = "SELECT `problem_id`, `category_id` FROM `prob_cat_mapping` WHERE category_id = '$selectedCategoryId'";
+        $query = "SELECT `problem_id`, `category_id` FROM `prob_cat_mapping` WHERE category_id = '$selectedCategoryId'"; //Record all the IDs of problems which have the given category id, from the prob_cat_mapping table.
         $result = mysql_query($query);
         while ($row = mysql_fetch_assoc($result)) {
             $tmpProblemIdArray[] = $row['problem_id'];
         }
 
-        print count($tmpProblemIdArray);
-        print implode($tmpProblemIdArray);
-
-        $query = "SELECT `pid`, `content` FROM `problem` WHERE `pid` != ANY(".implode($tmpProblemIdArray).") ORDER BY `pid` DESC";
-        $result - mysql_query($query);
-        while ($row = mysql_fetch_assoc($result)) {
-            $problemPidArray = $row['pid'];
-            $problemContentArray = $row['content'];
+        //Re-create the problem arrays but only include those problems who share the category with the requested category.
+        $problemPidArray = array();
+        $problemContentArray = array();
+        $query = "SELECT `pid`, `content` FROM `problem` WHERE `pid` IN(" . implode(',', $tmpProblemIdArray) . ") ORDER BY `pid` DESC;"; //Get all the problems from the problem table where the id of the problem is in the array of problems who share a category with the selected category, order by most recent first.
+        $result = mysql_query($query);
+        if ($result) { //If anything was returned...
+            while ($row = mysql_fetch_assoc($result)) {
+                $problemPidArray[] = $row['pid'];
+                $problemContentArray[] = $row['content'];
+            }
         }
-    } else {
-        die('Unknown category "'.$_GET['selectedCategory'].'"! Exiting.');
+    } else { //If we did not find the category that the user searched for...
+        die('Unknown category "' . $_GET['selectedCategory'] . '"! Exiting.');
     }
 }
-
 ?>
     <html>
     <head>
@@ -99,16 +105,27 @@ if (isset($_GET['selectedCategory'])) {
     <div class="container-fluid">
         <div id="main-wrapper" class="col-lg-10 col-lg-offset-1">
             <div class="row">
-                <h1 id="title">Math Problems</h1>
+                <div class="col-lg-9">
+                    <h1 id="title">Math Problems</h1>
+                </div>
+                <div class="ol-lg-3">
+                    <div class="selected-category-wrapper">
+                        <h4 class="selected-category">Selected Category:</h4>
+                        <a href="?selectedCategory=<?php print $selectedCategory; ?>" class="btn btn-info category-button selected-category"><?php print $selectedCategory; ?></a>
+                        <?php if ($selectedCategory != "{NO CATEGORY}") { //Show the remove button if the user has a category filter. ?>
+                            <a href="index.php" class="btn btn-danger">Remove</a>
+                        <?php } ?>
+                    </div>
+                </div>
             </div>
-            <div id="content-and-category-row" class="row">
+            <div id="question-and-category-row" class="row">
                 <div id="content-table-wrapper" class="col-lg-9">
-                    <form id="addNewQuestionForm" action="./submitQuestion.php" method="get">
+                    <form id="add-new-question-form" action="insertNewQuestion.php" method="get">
                         <div class="form-group">
                             <label for="newQuestionContent">Add a New Question</label>
-                            <input id="newQuestionContent" class="form-control" type="text" name="newQuestionContent" placeholder="New Question Content"/>
+                            <input id="new-question-content" class="form-control" type="text" name="newQuestionContent" placeholder="New Question Content"/>
                         </div>
-                        <input id="new-question-submit-button" class="btn btn-default" type="submit" value="Submit"/>
+                        <input id="new-question-submit-button" class="btn btn-primary" type="submit" value="Submit"/>
                     </form>
                     <table id="table" class="table-bordered table-hover">
                         <tr>
@@ -131,68 +148,63 @@ if (isset($_GET['selectedCategory'])) {
                             </th>
                         </tr>
                         <?php
-                        for ($i = 0; $i < count($problemPidArray); $i++) { ?>
+                        for ($i = 0; $i < count($problemPidArray); $i++) { //For every problem in the problem array... ?>
                             <tr>
-                                <td id="pid-cell-<?php print $problemPidArray[$i] ?>" class="pid-column row-<?php print $problemPidArray[$i] ?>"><p id="pid-<?php print $problemPidArray[$i]; ?>"><?php print $problemPidArray[$i]; ?></p></td>
-                                <form id='save-changes-form-<?php print count($problemPidArray) - $i; ?>' class='save-changes-form' action="./updateQuestion.php" method="get">
-                                    <input name="updatedQuestionPid" type="text" style="display: none;" value="<?php print $problemPidArray[$i] ?>"/>
-                                    <td id="content-cell-<?php print $problemPidArray[$i] ?>" class="content-column row-<?php print $problemPidArray[$i] ?>">
-                                        <div id="question-content-<?php print $problemPidArray[$i]; ?>" class="question-content"><?php print $problemContentArray[$i]; ?></div>
-                                        <textarea id="edit-content-<?php print $problemPidArray[$i]; ?>" class="edit-content" name='updatedQuestionContent' onkeyup="auto_grow(this;)"><?php print $problemContentArray[$i]; ?></textarea>
+                                <form class='save-changes-form' action="./updateQuestion.php" method="get">
+                                    <input name="updatedQuestionPid" type="hidden" value="<?php print $problemPidArray[$i] ?>"/>
+                                    <td>
+                                        <p><?php print $problemPidArray[$i]; ?></p>
                                     </td>
-                                    <td id="category-cell-<?php print $problemPidArray[$i]; ?>" class="category-column row-<?php print $problemPidArray[$i]; ?>">
+                                    <td class="content-column">
+                                        <div id="question-content-<?php print $problemPidArray[$i]; ?>" class="question-content view-question view"><?php print $problemContentArray[$i]; ?></div>
+                                        <textarea id="edit-content-<?php print $problemPidArray[$i]; ?>" class="edit-content edit-question edit" name='updatedQuestionContent' onkeyup="autoGrowTextArea(this);"><?php print $problemContentArray[$i]; ?></textarea>
+                                    </td>
+                                    <td class="category-column">
                                         <?php
-                                        $category = array();
+                                        $categoriesForThisProblem = array();
                                         for ($j = 0; $j < count($probcatmappingPcmidArray); $j++) { //For every item in the prob_cat_mapping table...
                                             if ($problemPidArray[$i] == $probcatmappingProblemIdArray[$j]) { //If the current problem's id matches the current problem id in prob_cat_mapping...
-                                                $category[] = $categoryNameArray[$probcatmappingCategoryIdArray[$j]]; //Category = Category + the category at the location found in the current prob_cat_mapping record.
+                                                $categoriesForThisProblem[] = $categoryNameArray[$probcatmappingCategoryIdArray[$j]]; //Add it to the array.
                                             }
                                         }
 
-                                        if (count($category) > 1) {
-                                            for ($j = 0; $j < count($category); $j++) {
-                                                if ($category[$j] = "{NO CATEGORY}") {
-                                                    array_splice($category, $j, 1);
+                                        if (count($categoriesForThisProblem) > 1) { //If more than "{NO CATEGORY}" is in the array...
+                                            for ($j = 0; $j < count($categoriesForThisProblem); $j++) { //For every item in the array...
+                                                if ($categoriesForThisProblem[$j] == "{NO CATEGORY}") { //If this item is "{NO CATEGORY}"
+                                                    array_splice($categoriesForThisProblem, $j, 1); //Remove {NO CATEGORY} from the array. This only affects whats visible, the DB still contains it. Thus, when a user clicks the {NO CATEGORY} button, these problems still pop up, which seems counter intuitive, but {NO CATEGORY} is supposed to show all current problems, so think of it that way.
                                                 }
                                             }
                                         }
 
-                                        if (count($category) == 0) { //If category remained empty...
-                                            $category[] = "{NO CATEGORY}"; //Initialize to the default value.
+                                        if (count($categoriesForThisProblem) == 0) { //If the array remained empty (this problem has NOT mapping in the prob_cat_mapping table)...
+                                            $categoriesForThisProblem[] = "{NO CATEGORY}"; //Initialize to the default value.
 
-                                            $query = "INSERT INTO `prob_cat_mapping` (`problem_id`, `category_id`) VALUES('$problemPidArray[$i]', '0')"; //Insert this relationship into the prob_cat_mapping table.
+                                            $query = "INSERT INTO `prob_cat_mapping` (`problem_id`, `category_id`) VALUES('$problemPidArray[$i]', '0')"; //Insert this (default) relationship into the prob_cat_mapping table.
 
-                                            $result = mysql_query($query); //Execute the query/
+                                            $result = mysql_query($query); //Execute the query.
                                         }
 
-                                        for ($j = 0; $j < count($category); $j++) {
-                                            if ($category[$j] != "{NO CATEGORY}") {
-                                                ?>
-                                                <div id="categories-<?php print $problemPidArray[$i]; ?>" class="categories"><a href="?selectedCategory=<?php print $category[$j]; ?>" class="btn btn-default"><?php print $category[$j]; ?></a></div>
-                                                <?php
-                                            } else {
-                                                ?>
-                                                <div id="categories-<?php print $problemPidArray[$i]; ?>" class="categories"><?php print $category[$j]; ?></div>
-                                                <?php
-                                            }
+                                        for ($j = 0; $j < count($categoriesForThisProblem); $j++) { //For every category connected to this problem... ?>
+                                            <a href="?selectedCategory=<?php print $categoriesForThisProblem[$j]; ?>" class="btn btn-info category-button"><?php print $categoriesForThisProblem[$j]; ?></a>
+                                            <?php
                                         }
                                         ?>
-                                        <select id="category-select-<?php print $problemPidArray[$i]; ?>" class="category-select" name="updatedCategory">
+                                        <select id="category-select-<?php print $problemPidArray[$i]; ?>" class="category-select edit-question edit" name="updatedCategoryName">
                                             <?php
-                                            for ($j = 0; $j < count($categoryCidArray); $j++) {
-                                                if ($categoryCidArray[$j] != '0') {
+                                            for ($j = 0; $j < count($categoryCidArray); $j++) { //For every category in the category array...
+                                                if ($categoryCidArray[$j] != '0') { //If this is not the default category ("{NO CATEGORY}")...
                                                     ?>
-                                                    <option id="category-option-<?php print $problemPidArray[$i] . "-" . $j; ?>" class="category-option-<?php print $problemPidArray[$i]; ?>" <?php print $categoryNameArray[$j] == $category ? "selected='selected'" : ""; ?>><?php print $categoryNameArray[$j]; ?></option>
+                                                    <option><?php print $categoryNameArray[$j]; ?></option>
                                                     <?php
-                                                } else { ?>
-                                                    <option id="category-option-<?php print $problemPidArray[$i] . "-" . $j; ?>" class="category-option-<?php print $problemPidArray[$i]; ?>" <?php print $categoryNameArray[$j] == $category ? "selected='selected'" : ""; ?>>Choose a category...</option>
+                                                } else { //Otherwise... ?>
+                                                    <option selected="selected">Choose a category...</option>
                                                 <?php }
                                             } ?>
                                         </select>
                                     </td>
-                                    <td id="edit-cell-<?php print $problemPidArray[$i] ?>" class="edit-column row-<?php print $problemPidArray[$i] ?>">
-                                        <input id='edit-button-<?php print count($problemPidArray) - $i; ?>' class='edit-button btn btn-default' type='button' onClick='edit(<?php print count($problemPidArray) - $i; ?>);' value='Edit'/>
-                                        <input id='save-changes-<?php print count($problemPidArray) - $i; ?>' class='save-changes btn btn-default' type='submit' onClick='save(<?php print count($problemPidArray) - $i; ?>);' value='Save'/>
+                                    <td>
+                                        <input id="edit-question-button-<?php print $problemPidArray[$i]; ?>" class='edit-question-button btn btn-primary view-question view' type='button' onClick='editQuestion(<?php print count($problemPidArray) - $i; ?>);' value='Edit'/>
+                                        <input id="save-question-changes-button-<?php print $problemPidArray[$i]; ?>" class='save-question-changes-button btn btn-primary edit-question edit' type='submit' value='Save'/>
                                     </td>
                                 </form>
                             </tr>
@@ -202,12 +214,12 @@ if (isset($_GET['selectedCategory'])) {
                 </div>
                 <div id="category-table-wrapper-2" class="col-lg-offset-9">
                     <div id="category-table-wrapper" class=" col-lg-3">
-                        <form action="submitCategory.php">
+                        <form action="insertNewCategory.php">
                             <div class="form-group">
                                 <label for="newCategory">Add a New Category</label>
-                                <input type="text" class="form-control" id="newCategory" name="newCategoryName" placeholder="New Category Name">
+                                <input type="text" class="form-control" id="new-category" name="newCategoryName" placeholder="New Category Name">
                             </div>
-                            <input id="new-category-submit-button" class="btn btn-default" type="submit" value="Submit"/>
+                            <input id="new-category-submit-button" class="btn btn-primary" type="submit" value="Submit"/>
                         </form>
                         <table id="category-table" class="table-bordered table-hover">
                             <thead id="category-table-thead">
@@ -229,23 +241,25 @@ if (isset($_GET['selectedCategory'])) {
                             </tr>
                             </thead>
                             <tbody id="category-table-tbody">
-                            <?php for ($i = 0; $i < count($categoryCidArray); $i++) { ?>
-                                <form id="save-content-changes-form-<?php print $categoryCidArray[$i]; ?>" class="save-content-changes-form" action="./updateCategory.php" method="get">
+                            <?php for ($i = 0; $i < count($categoryCidArray); $i++) { //For every category in the category table... ?>
+                                <form class="save-content-changes-form" action="./updateCategory.php" method="get">
                                     <tr>
-                                        <td id="cid-cell-<?php print $categoryCidArray[$i]; ?>" class="cid-column category-row-<?php print $categoryCidArray[$i]; ?> category-id-column"><p id="cid-<?php print $categoryCidArray[$i]; ?>"><?php print $categoryCidArray[$i]; ?></p></td>
-                                        <input name="updatedCategoryCid" type="text" style="display: none;" value="<?php print $categoryCidArray[$i]; ?>"/>
-                                        <td id="category-name-cell-<?php print $categoryCidArray[$i]; ?>" class="category-name-cell category-name-column">
-                                            <p id="category-name-<?php print $categoryCidArray[$i]; ?>" class="category-name"><?php print $categoryNameArray[$i]; ?></p>
-                                            <textarea id="edit-category-content-<?php print $categoryCidArray[$i]; ?>" class="edit-category-content" name="updatedCategoryName" onkeyup="auto_grow(this);"><?php print $categoryNameArray[$i]; ?></textarea>
+                                        <input name="updatedCategoryCid" type="hidden" value="<?php print $categoryCidArray[$i]; ?>"/>
+                                        <td class="category-id-column">
+                                            <p><?php print $categoryCidArray[$i]; ?></p>
                                         </td>
-                                        <td id="category-edit-cell-<?php print $categoryCidArray[$i]; ?>" class="category-edit-cell category-edit-column">
-                                            <?php if ($categoryCidArray[$i] != 0) { ?>
-                                                <input id="edit-category-button-<?php print $categoryCidArray[$i]; ?>" class='edit-category-button btn btn-default' type='button' value='Edit' onclick="editCategory(<?php print $categoryCidArray[$i]; ?>);"/>
-                                                <input id="save-category-button-<?php print $categoryCidArray[$i]; ?>" class="save-category-button btn btn-default" type="submit" value="Save"/>
-                                            <?php } else { ?>
-                                            <p>Default</p>
+                                        <td class="category-name-cell category-name-column">
+                                            <a id="category-name-<?php print $categoryCidArray[$i]; ?>" href="?selectedCategory=<?php print $categoryNameArray[$i]; ?>" class="btn btn-info category-button category-name view-category view"><?php print $categoryNameArray[$i]; ?></a>
+                                            <textarea id="edit-category-content-<?php print $categoryCidArray[$i]; ?>" class="edit-category-content edit-category edit" name="updatedCategoryName" onkeyup="autoGrowTextArea(this);"><?php print $categoryNameArray[$i]; ?></textarea>
                                         </td>
-                                        <?php } ?>
+                                        <td class="category-edit-cell category-edit-column">
+                                            <?php if ($categoryCidArray[$i] != 0) { //If this is the default category... ?>
+                                                <input id="edit-category-button-<?php print $categoryCidArray[$i]; ?>" class='edit-category-button btn btn-primary view-category view' type='button' value='Edit' onclick="editCategory(<?php print $categoryCidArray[$i]; ?>);"/>
+                                                <input id="save-category-button-<?php print $categoryCidArray[$i]; ?>" class="save-category-changes-button btn btn-primary edit-category edit" type="submit" value="Save"/>
+                                            <?php } else { //Otherwise... ?>
+                                                <p>Default</p>
+                                            <?php } ?>
+                                        </td>
                                     </tr>
                                 </form>
                                 <?php
